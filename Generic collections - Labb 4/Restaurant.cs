@@ -40,7 +40,7 @@ namespace Generic_collections___Labb_4
             Console.WriteLine("~~~~~~~~~~~~~~~~~ORDERKÖ~~~~~~~~~~~~~~~~~");
             foreach (var orders in OrderQueue)
             {
-                orders.ShowOneOrder();
+                orders.ShowOneOrder(); 
             }
         }
 
