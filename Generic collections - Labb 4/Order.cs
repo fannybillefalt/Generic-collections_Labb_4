@@ -22,5 +22,14 @@ namespace Generic_collections___Labb_4
             _orderItems = orderItems;
             _tableNumber = tableNumber;
         }
+
+        public void ShowOrders()
+        {
+            Console.WriteLine("~~~~~~~~~~~~~~~~~ORDERKÖ~~~~~~~~~~~~~~~~~");
+            foreach (Order orders in MenuItem)
+            {
+                Console.WriteLine($"{orders}");
+            }
+        }
     }
 }
