@@ -30,12 +30,17 @@ namespace Generic_collections___Labb_4
             OrderQueue.Enqueue(orders);
         }
 
+        public void HandleOrder()
+        {
+            OrderQueue.Dequeue();
+        }
+
         public void ShowOrders()
         {
             Console.WriteLine("~~~~~~~~~~~~~~~~~ORDERKÖ~~~~~~~~~~~~~~~~~");
-            foreach (Order orders in OrderQueue)
+            foreach (var orders in OrderQueue)
             {
-                Console.WriteLine($"{orders}");
+                orders.ShowOneOrder();
             }
         }
 

@@ -23,12 +23,12 @@ namespace Generic_collections___Labb_4
             _tableNumber = tableNumber;
         }
 
-        public void ShowOrders()
+        public void ShowOneOrder()
         {
-            Console.WriteLine("~~~~~~~~~~~~~~~~~ORDERKÖ~~~~~~~~~~~~~~~~~");
-            foreach (Order orders in MenuItem)
+            Console.WriteLine($"{_orderId} BORD {_tableNumber}");
+            foreach (var orders in _orderItems)
             {
-                Console.WriteLine($"{orders}");
+                Console.WriteLine(orders);
             }
         }
     }
