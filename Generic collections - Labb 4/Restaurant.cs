@@ -14,6 +14,7 @@ namespace Generic_collections___Labb_4
         public void AddToMenu(MenuItem menuItems)
         {
             Menu.Add(menuItems);
+            Console.WriteLine($"{menuItems.Name} har lagts till i menyn.");
         }
 
         public void ShowMenu()
@@ -28,11 +29,13 @@ namespace Generic_collections___Labb_4
         public void CreateOrder(Order orders)
         {
             OrderQueue.Enqueue(orders);
+            Console.WriteLine($"En ny beställning har lagts till: {orders.ShowOneOrder}");
         }
 
         public void HandleOrder()
         {
             OrderQueue.Dequeue();
+            Console.WriteLine($"Order {OrderQueue.Dequeue()} är färdig");
         }
 
         public void ShowOrders()
@@ -46,7 +49,13 @@ namespace Generic_collections___Labb_4
 
         public void ShowNextOrder()
         {
-            OrderQueue.Peek();
+            OrderQueue.Peek().ShowOneOrder();
+            Console.WriteLine($"Nästa order i kör är: ");
+        }
+
+        public void ShowOrderCount()
+        {
+            Console.WriteLine($"Antal beställningar: {OrderQueue.Count}"); 
         }
     }
 }

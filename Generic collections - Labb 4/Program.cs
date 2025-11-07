@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            
+            var restaurant = new Restaurant();
+            var menu = new MenuItem(01, shawarmarulle, 120);
         }
     }
 }
