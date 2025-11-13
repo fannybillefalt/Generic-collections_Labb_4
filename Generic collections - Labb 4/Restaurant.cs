@@ -64,7 +64,14 @@ namespace Generic_collections___Labb_4
 
         internal void ShowOrderCount()
         {
-            Console.WriteLine($"Det är {OrderQueue.Count} ordrar i kön.\n"); 
+            if (OrderQueue.Count > 1)
+            {
+                Console.WriteLine($"Det är {OrderQueue.Count} ordrar i kön.\n"); 
+            }
+            else if (OrderQueue.Count <= 1)
+            {
+                Console.WriteLine($"Det är {OrderQueue.Count} order i kön.\n");
+            }
         }
     }
 }
