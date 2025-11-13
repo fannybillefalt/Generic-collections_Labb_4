@@ -14,6 +14,7 @@ namespace Generic_collections___Labb_4
         private List<MenuItem> _orderItems;
         private int _tableNumber;
 
+        //Added property to "open up" the private field _orderId
         public int OrderId
         {
             get { return _orderId; }
