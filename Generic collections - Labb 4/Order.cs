@@ -25,11 +25,14 @@ namespace Generic_collections___Labb_4
 
         public void ShowOneOrder()
         {
-            Console.WriteLine($"{_orderId} BORD {_tableNumber}");
-            foreach (var orders in _orderItems)
+            decimal price = 0;
+            Console.WriteLine($"Order {_orderId}");
+            foreach (var order in _orderItems)
             {
-                Console.WriteLine(orders);
+                Console.WriteLine($"1 {order.Name} ");
+                price += order.Price;
             }
+            Console.WriteLine($"Summa: {price} kr");
         }
     }
 }

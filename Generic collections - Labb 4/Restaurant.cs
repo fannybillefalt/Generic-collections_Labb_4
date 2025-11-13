@@ -19,17 +19,24 @@ namespace Generic_collections___Labb_4
 
         public void ShowMenu()
         {
-            Console.WriteLine("~~~~~~~~~~~~~~~~~MENY~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("\n~~~~~~MENY~~~~~~");
             foreach (MenuItem menuItems in Menu)
             {
-                Console.WriteLine($"{menuItems.Id} {menuItems.Name} {menuItems.Price}");
+                Console.WriteLine($"{menuItems.Id}. {menuItems.ToString()}");
             }
+            Console.WriteLine();
         }
 
         public void CreateOrder(Order orders)
         {
             OrderQueue.Enqueue(orders);
-            Console.WriteLine($"En ny beställning har lagts till: {orders.ShowOneOrder}");
+            int number = 0;
+            foreach(var nr in OrderQueue)
+            {
+                number++;
+            }
+            
+            Console.WriteLine($"Beställning nr {number} har lagts till");
         }
 
         public void HandleOrder()
