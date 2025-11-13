@@ -31,10 +31,10 @@ namespace Generic_collections___Labb_4
         internal void ShowOneOrder()
         {
             decimal price = 0;
-            Console.WriteLine($"Order {_orderId}");
+            Console.WriteLine($"Order: {_orderId}");
             foreach (var order in _orderItems)
             {
-                Console.WriteLine($"1 {order.Name} ");
+                Console.WriteLine($"1 st {order.Name} ");
                 price += order.Price;
             }
             Console.WriteLine($"Summa: {price} kr");

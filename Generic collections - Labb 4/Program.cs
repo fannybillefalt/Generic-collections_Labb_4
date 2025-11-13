@@ -19,22 +19,18 @@
             restaurant.ShowMenu();
             Console.WriteLine("-----------------------");
 
-            //List<MenuItem> orderList1 = new List<MenuItem>() { menu1, menu2, menu3 };
-            //List < MenuItem > orderList2 = new List<MenuItem>() { menu1, menu2 };
             var order1 = new Order(new List<MenuItem>() { menu1, menu2, menu3}, 3);
             var order2 = new Order(new List<MenuItem>() { menu1, menu2 }, 5);
             var order3 = new Order(new List<MenuItem>() { menu4, menu4 }, 1);
-
+            
             restaurant.CreateOrder(order1);
             restaurant.CreateOrder(order2);
             restaurant.CreateOrder(order3);
 
             Console.WriteLine("-----------------------");
-            Console.WriteLine("Aktuella beställningar:");
 
-            order1.ShowOneOrder();
-            order2.ShowOneOrder();
-            order3.ShowOneOrder();
+            restaurant.ShowOrders();
+
             Console.WriteLine("-----------------------");
 
             restaurant.ShowOrderCount();
@@ -42,6 +38,24 @@
             restaurant.ShowNextOrder();
 
             restaurant.HandleOrder();
+
+            restaurant.ShowOrderCount();
+            Console.WriteLine("-----------------------");
+            var order4 = new Order(new List<MenuItem>() { menu4, menu4, menu1, menu2, menu3 }, 1);
+            restaurant.CreateOrder(order4);
+
+            restaurant.ShowOrderCount();
+
+            restaurant.HandleOrder();
+            restaurant.HandleOrder();
+
+            restaurant.ShowOrderCount();
+            Console.WriteLine("-----------------------");
+            restaurant.ShowNextOrder();
+            restaurant.HandleOrder();
+            restaurant.ShowNextOrder();
+
+
 
 
         }

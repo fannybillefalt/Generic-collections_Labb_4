@@ -29,24 +29,18 @@ namespace Generic_collections___Labb_4
         internal void CreateOrder(Order orders)
         {
             OrderQueue.Enqueue(orders);
-            int number = 0;
-            foreach(var nr in OrderQueue)
-            {
-                number++;
-            }
-            
-            Console.WriteLine($"Beställning nr {number} har lagts till");
+            Console.WriteLine($"Beställning nr {orders.OrderId} har lagts till");
         }
 
         internal void HandleOrder()
         {
                 Order nextorder = OrderQueue.Dequeue();
-                Console.WriteLine($"Order {nextorder.OrderId} färdig");
+                Console.WriteLine($"Order {nextorder.OrderId} färdig.\n");
         }
 
         internal void ShowOrders()
         {
-            Console.WriteLine("~~~~~~~~~~~~~~~~~ORDERKÖ~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("Aktuella beställningar:");
             foreach (var orders in OrderQueue)
             {
                 orders.ShowOneOrder(); 
@@ -70,7 +64,7 @@ namespace Generic_collections___Labb_4
 
         internal void ShowOrderCount()
         {
-            Console.WriteLine($"Det är {OrderQueue.Count} ordrar i kön"); 
+            Console.WriteLine($"Det är {OrderQueue.Count} ordrar i kön.\n"); 
         }
     }
 }
