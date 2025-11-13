@@ -14,7 +14,12 @@ namespace Generic_collections___Labb_4
         private List<MenuItem> _orderItems;
         private int _tableNumber;
 
-        public Order(List<MenuItem> orderItems, int tableNumber)
+        public int OrderId
+        {
+            get { return _orderId; }
+        }
+
+        internal Order(List<MenuItem> orderItems, int tableNumber)
         {
             // Automatiskt skapande av id
             _orderId = orderIdCounter;
@@ -23,7 +28,7 @@ namespace Generic_collections___Labb_4
             _tableNumber = tableNumber;
         }
 
-        public void ShowOneOrder()
+        internal void ShowOneOrder()
         {
             decimal price = 0;
             Console.WriteLine($"Order {_orderId}");
@@ -33,6 +38,9 @@ namespace Generic_collections___Labb_4
                 price += order.Price;
             }
             Console.WriteLine($"Summa: {price} kr");
+            Console.WriteLine($"Till bord nummer: {_tableNumber}\n");
         }
+
+        
     }
 }
