@@ -11,51 +11,60 @@ namespace Generic_collections___Labb_4
         List<MenuItem> Menu = new List<MenuItem>();
         Queue<Order> OrderQueue = new Queue<Order>();
 
-        public void AddToMenu(MenuItem menuItems)
+        internal void AddToMenu(MenuItem menuItems)
         {
             Menu.Add(menuItems);
             Console.WriteLine($"{menuItems.Name} har lagts till i menyn.");
         }
 
-        public void ShowMenu()
+        internal void ShowMenu()
         {
-            Console.WriteLine("~~~~~~~~~~~~~~~~~MENY~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("~MENY~");
             foreach (MenuItem menuItems in Menu)
             {
-                Console.WriteLine($"{menuItems.Id} {menuItems.Name} {menuItems.Price}");
+                Console.WriteLine($"{menuItems.Id}. {menuItems.ToString()}");
             }
         }
 
-        public void CreateOrder(Order orders)
+        internal void CreateOrder(Order orders)
         {
             OrderQueue.Enqueue(orders);
-            Console.WriteLine($"En ny beställning har lagts till: {orders.ShowOneOrder}");
+            Console.WriteLine($"Beställning nr {orders.OrderId} har lagts till");
         }
 
-        public void HandleOrder()
+        internal void HandleOrder()
         {
-            OrderQueue.Dequeue();
-            Console.WriteLine($"Order {OrderQueue.Dequeue()} är färdig");
+                Order nextorder = OrderQueue.Dequeue();
+                Console.WriteLine($"Order {nextorder.OrderId} färdig.\n");
         }
 
-        public void ShowOrders()
+        internal void ShowOrders()
         {
-            Console.WriteLine("~~~~~~~~~~~~~~~~~ORDERKÖ~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("Aktuella beställningar:");
             foreach (var orders in OrderQueue)
             {
                 orders.ShowOneOrder(); 
             }
         }
 
-        public void ShowNextOrder()
+        internal void ShowNextOrder()
         {
-            OrderQueue.Peek().ShowOneOrder();
-            Console.WriteLine($"Nästa order i kör är: ");
+            if(OrderQueue.Count > 0)
+            {
+                Order nextorder = OrderQueue.Peek();
+
+                Console.WriteLine($"Nästa order i kön:");
+                nextorder.ShowOneOrder();
+            }
+            else
+            {
+                Console.WriteLine("Det finns inga väntande ordrar i kön just nu.");
+            }
         }
 
-        public void ShowOrderCount()
+        internal void ShowOrderCount()
         {
-            Console.WriteLine($"Antal beställningar: {OrderQueue.Count}"); 
+            Console.WriteLine($"Det är {OrderQueue.Count} ordrar i kön.\n"); 
         }
     }
 }
